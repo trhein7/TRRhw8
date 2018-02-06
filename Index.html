@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <meta charset=utf-8 />
+    <title>Index</title>
+</head>
+
+<style id="jsbin-css">
+
+    div {
+        float: left;
+        width: 300px;
+        height: 300px;
+        border: 1px solid #cccccc;
+        border-radius: 10px;
+        margin: 10px;
+    }
+
+
+</style>
+</head>
+<body>
+    <div id="one"></div>
+
+    <div id="two"></div>
+
+    <div id="three"></div>
+
+    <button id="button">Play</button>
+
+
+    <script>
+
+        var safeColors = ['00', '33', '55', '66', '99', 'aa', 'bb', 'cc', 'dd', 'ff'];
+        var rand = function () {
+            return Math.floor(Math.random() * 10);
+        };
+        var randomColor = function () {
+            var r = safeColors[rand()];
+            var g = safeColors[rand()];
+            var b = safeColors[rand()];
+            return "#" + r + g + b;
+        };
+        $(document).ready(function () {
+            $('#button').click(function () {
+                $('div').each(function () {
+                    $(this).css('background', randomColor());
+                });
+            });
+        });
+
+        function button() {
+            var write_message;
+            if (r == g && g == b && b == r) {
+                write_message('Congratulations, you won!');
+            } else {
+                write_message('Sorry, try again!');
+            }
+        }
+
+    </script>
+  
+</body>
+</html>
+
